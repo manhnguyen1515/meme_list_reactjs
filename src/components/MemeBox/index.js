@@ -5,12 +5,11 @@ import MemeCaptionInput from '../MemeCaptionInput';
 
 function MemeBox (props) {
     const content = props.content;
-    const height = Math.floor(((230 * content.height) / content.width) * (26 / 230));
     const [visible, setVisible] = useState();
     const [texts, setTexts] = useState([]);
     const [currentEventInput, setCurrentEventInput] = useState();
     const [newMemeUrl, setNewMemeUrl] = useState(content.url);
-
+        
     const showModal = () => {
         setVisible(true);
     }
@@ -91,6 +90,7 @@ function MemeBox (props) {
             });
     }
 
+    const height = Math.floor(((230 * content.height) / content.width) / 10) + 3;
     const styles = {
         gridRowEnd: 'span ' + height
     }
